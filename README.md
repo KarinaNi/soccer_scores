@@ -110,10 +110,7 @@ This is an example of how to list things you need to use the software and how to
    ```sh
    npm install
    ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
-   ```
+4. python gui.py
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -185,7 +182,7 @@ Project Link: [[https://github.com/github_username/repo_name](https://github.com
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-* [Python Guide to Tkinter](https://realpython.com/python-gui-tkinter/#building-your-first-python-gui-application-with-tkinter))
+* [Python Guide to Tkinter](https://realpython.com/python-gui-tkinter/#building-your-first-python-gui-application-with-tkinter)
 * []()
 * []()
 
