@@ -185,7 +185,7 @@ Project Link: [[https://github.com/github_username/repo_name](https://github.com
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-* [ Dr. William H. Wolberg, University of Wisconsin Madison Hospitals](https://www.google.com/search?q=University+of+Wisconsin+Hospitals%2C+Madison+from+Dr.+William+H.+Wolberg&sourceid=chrome&ie=UTF-8)
+* [https://www.google.com/search?q=University+of+Wisconsin+Hospitals%2C+Madison+from+Dr.+William+H.+Wolberg&sourceid=chrome&ie=UTF-8](https://realpython.com/python-gui-tkinter/#building-your-first-python-gui-application-with-tkinter))
 * []()
 * []()
 
