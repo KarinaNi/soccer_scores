@@ -28,6 +28,10 @@ root.option_add("*TCombobox*Background", "#ffffff")
 results_frame = ttk.Frame(root, padding="10", relief=tk.RIDGE)
 results_frame.pack(padx=20, pady=20, fill=tk.BOTH, expand=True)
 
+# Add a header label with bold text and centered alignment
+header_label = ttk.Label(results_frame, text="Soccer Scores", font=("TkDefaultFont", 14, "bold"), anchor="center")
+header_label.pack(fill=tk.X, pady=10)
+
 fetch_button = ttk.Button(root, text="Fetch Data", command=fetch_data_and_display)
 fetch_button.pack(padx=20, pady=10)
 

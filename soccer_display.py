@@ -15,26 +15,21 @@ def fetch_data():
     return data['matches'] if 'matches' in data else []
 
 def display_results(matches, results_text):
+    home_images = []  # List to store references to home images
+    away_images = []  # List to store references to away images
+
     for match in matches:
         home_url = match['homeTeam']['crest']
         away_url = match['awayTeam']['crest']
         home_response = requests.get(home_url)
         away_response = requests.get(away_url)
-        home_image = Image.open(BytesIO(home_response.content))
-        away_image = Image.open(BytesIO(away_response.content))
-        home_image = home_image.resize((100,50))
-        away_image = away_image.resize((100,50))
+        home_image = Image.open(BytesIO(home_response.content)).resize((50, 50))  
+        away_image = Image.open(BytesIO(away_response.content)).resize((50, 50))  
         home_image = ImageTk.PhotoImage(home_image)
         away_image = ImageTk.PhotoImage(away_image)
-        
-        home_image_label = tk.Label(results_text, image = home_image)
-        home_image_label.image = home_image
-        home_image_label.pack(side=tk.LEFT)
-        
-        away_image_label = tk.Label(results_text, image = away_image)
-        away_image_label.image = away_image
-        away_image_label.pack(side = tk.LEFT)
 
+        home_images.append(home_image)  
+        away_images.append(away_image) 
         home_team = match['homeTeam']['name']
         away_team = match['awayTeam']['name']
         if match['status'] == "FINISHED":
@@ -43,5 +38,13 @@ def display_results(matches, results_text):
             score = f"{home_score}-{away_score}"
         else:
             score = "not played yet"
-        results_text.insert(tk.END, f" {home_team} vs {away_team}: {score}\n")
+        
+        results_text.image_create(tk.END, image=home_image)
+        results_text.insert(tk.END, f" {home_team} ")
+        results_text.image_create(tk.END, image=away_image)
+        results_text.insert(tk.END, f" {away_team}: {score}\n")
+
+    results_text.home_images = home_images
+    results_text.away_images = away_images
+
 
